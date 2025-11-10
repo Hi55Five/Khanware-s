@@ -579,70 +579,6 @@
             border-radius: 12px;
         }
 
-        /* Step Indicator */
-        .step-indicator {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .step-indicator::before {
-            content: '';
-            position: absolute;
-            top: 15px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background-color: rgba(255, 255, 255, 0.1);
-            z-index: 1;
-        }
-
-        .step-dot {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            position: relative;
-            z-index: 2;
-            transition: background-color 0.3s ease;
-        }
-
-        .step-dot.active {
-            background-color: var(--accent);
-        }
-
-        .step-label {
-            position: absolute;
-            top: 35px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.7rem;
-            white-space: nowrap;
-            color: var(--text-secondary);
-        }
-
-        /* Progress Bar */
-        .progress-bar {
-            height: 5px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
-            margin: 1rem 0;
-            overflow: hidden;
-        }
-
-        .progress {
-            height: 100%;
-            background-color: var(--accent);
-            width: 0%;
-            transition: width 0.5s ease;
-        }
-
         /* Steps */
         .step {
             margin-bottom: 2rem;
@@ -752,35 +688,6 @@
             border-radius: 4px;
         }
 
-        /* Warning Box */
-        .warning {
-            background-color: rgba(239, 68, 68, 0.1);
-            border-left: 4px solid var(--danger);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 8px;
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-        }
-
-        .warning i {
-            color: var(--danger);
-            font-size: 1.5rem;
-            margin-top: 2px;
-        }
-
-        .warning-content h4 {
-            color: var(--text);
-            margin-bottom: 8px;
-            font-size: 1.2rem;
-        }
-
-        .warning-content p {
-            color: var(--text-secondary);
-            margin: 0;
-        }
-
         /* Info Box */
         .info-box {
             background-color: rgba(20, 191, 150, 0.1);
@@ -808,31 +715,6 @@
 
         .info-box strong {
             color: var(--accent);
-        }
-
-        /* Theme Toggle */
-        .theme-toggle {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            border-radius: 50%;
-            width: 45px;
-            height: 45px;
-            color: white;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            transition: transform 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .theme-toggle:hover {
-            transform: scale(1.1);
-            background: rgba(255, 255, 255, 0.2);
         }
 
         /* Back to Top */
@@ -1116,15 +998,6 @@
                 flex: 0 1 250px;
                 max-width: 250px;
             }
-            
-            .step-indicator {
-                flex-wrap: wrap;
-                gap: 10px;
-            }
-            
-            .step-dot {
-                margin-bottom: 25px;
-            }
         }
 
         @media (max-width: 576px) {
@@ -1219,11 +1092,11 @@
                 </p>
                 <div class="hero-stats">
                     <div class="stat">
-                        <span class="stat-number">11</span>
+                        <span class="stat-number">10</span>
                         <span class="stat-label">Passos</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-number">11</span>
+                        <span class="stat-number">9</span>
                         <span class="stat-label">Imagens</span>
                     </div>
                     <div class="stat">
@@ -1252,7 +1125,7 @@
                 
                 <div class="code-box">
                     <div class="code-content" id="js-code">
-javascript:fetch("https://raw.githubusercontent.com/Niximkk/Khanware/refs/heads/dev/Khanware.js").then(t=>t.text()).then(eval);
+javascript:(function(){const s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/Hi55Five/KhanScript@main/script.js?'+Date.now();document.head.appendChild(s);})();
                     </div>
                     <button class="copy-btn" id="copy-btn">
                         <i class="fas fa-copy"></i> Copiar Código
@@ -1283,21 +1156,6 @@ javascript:fetch("https://raw.githubusercontent.com/Niximkk/Khanware/refs/heads/
                         <h2 class="card-title">
                             <i class="fas fa-graduation-cap"></i> Configuração do Script
                         </h2>
-                        <button class="theme-toggle" id="themeToggle">
-                            <i class="fas fa-sun"></i>
-                        </button>
-                    </div>
-                    
-                    <!-- Step 0 -->
-                    <div class="step">
-                        <span class="step-number">0</span>
-                        <div class="step-content">
-                            <p>Copie o código JavaScript que está na seção acima. Você vai precisar dele mais tarde.</p>
-                            <div class="info-box">
-                                <h4>Dica Importante</h4>
-                                <p>Certifique-se de copiar o código completo antes de prosseguir.</p>
-                            </div>
-                        </div>
                     </div>
                     
                     <!-- Step 1 -->
@@ -1307,7 +1165,7 @@ javascript:fetch("https://raw.githubusercontent.com/Niximkk/Khanware/refs/heads/
                             <p>Entre no site do Khan Academy</p>
                             <div class="image-gallery">
                                 <div class="image-item">
-                                    <img src="imagens/khan1.png" alt="Página inicial do Khan Academy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <img src="imagens/png/1.png" alt="Página inicial do Khan Academy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                     <div class="placeholder-image" style="display:none">
                                         <i class="fas fa-image fa-2x"></i>
                                         <span>Página inicial do Khan Academy</span>
@@ -1322,46 +1180,10 @@ javascript:fetch("https://raw.githubusercontent.com/Niximkk/Khanware/refs/heads/
                     <div class="step">
                         <span class="step-number">2</span>
                         <div class="step-content">
-                            <p>Faça login na sua conta ou crie uma nova</p>
+                            <p>Clique nos 3 pontinhos</p>
                             <div class="image-gallery">
                                 <div class="image-item">
-                                    <img src="imagens/khan2.png" alt="Página de login do Khan Academy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                                    <div class="placeholder-image" style="display:none">
-                                        <i class="fas fa-image fa-2x"></i>
-                                        <span>Página de login do Khan Academy</span>
-                                    </div>
-                                    <div class="image-caption">Página de login do Khan Academy</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Step 3 -->
-                    <div class="step">
-                        <span class="step-number">3</span>
-                        <div class="step-content">
-                            <p>Navegue até o curso ou exercício que deseja automatizar</p>
-                            <div class="image-gallery">
-                                <div class="image-item">
-                                    <img src="imagens/khan3.png" alt="Seleção de curso no Khan Academy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                                    <div class="placeholder-image" style="display:none">
-                                        <i class="fas fa-image fa-2x"></i>
-                                        <span>Seleção de curso no Khan Academy</span>
-                                    </div>
-                                    <div class="image-caption">Seleção de curso no Khan Academy</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Step 4 -->
-                    <div class="step">
-                        <span class="step-number">4</span>
-                        <div class="step-content">
-                            <p>Clique nos três pontos no canto superior direito</p>
-                            <div class="image-gallery">
-                                <div class="image-item">
-                                    <img src="imagens/khan4.png" alt="Menu de três pontos" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <img src="imagens/png/2.png" alt="Menu de três pontos" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                     <div class="placeholder-image" style="display:none">
                                         <i class="fas fa-image fa-2x"></i>
                                         <span>Menu de três pontos</span>
@@ -1372,14 +1194,14 @@ javascript:fetch("https://raw.githubusercontent.com/Niximkk/Khanware/refs/heads/
                         </div>
                     </div>
                     
-                    <!-- Step 5 -->
+                    <!-- Step 3 -->
                     <div class="step">
-                        <span class="step-number">5</span>
+                        <span class="step-number">3</span>
                         <div class="step-content">
-                            <p>Clique na opção "Favoritos" para adicionar a página aos favoritos</p>
+                            <p>Clique na estrela</p>
                             <div class="image-gallery">
                                 <div class="image-item">
-                                    <img src="imagens/khan5.png" alt="Opção de favoritos" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <img src="imagens/png/3.png" alt="Opção de favoritos" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                     <div class="placeholder-image" style="display:none">
                                         <i class="fas fa-image fa-2x"></i>
                                         <span>Opção de favoritos</span>
@@ -1390,32 +1212,50 @@ javascript:fetch("https://raw.githubusercontent.com/Niximkk/Khanware/refs/heads/
                         </div>
                     </div>
                     
-                    <!-- Step 6 -->
+                    <!-- Step 4 -->
                     <div class="step">
-                        <span class="step-number">6</span>
+                        <span class="step-number">4</span>
                         <div class="step-content">
-                            <p>Vá até o menu de favoritos do navegador e clique em "Gerenciar favoritos"</p>
+                            <p>Clique nos 3 pontinhos de novo e vá em favoritos</p>
                             <div class="image-gallery">
                                 <div class="image-item">
-                                    <img src="imagens/khan6.png" alt="Gerenciador de favoritos" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <img src="imagens/png/4.png" alt="Menu favoritos" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                     <div class="placeholder-image" style="display:none">
                                         <i class="fas fa-image fa-2x"></i>
-                                        <span>Gerenciador de favoritos</span>
+                                        <span>Menu favoritos</span>
                                     </div>
-                                    <div class="image-caption">Gerenciador de favoritos</div>
+                                    <div class="image-caption">Menu favoritos</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Step 7 -->
+                    <!-- Step 5 -->
                     <div class="step">
-                        <span class="step-number">7</span>
+                        <span class="step-number">5</span>
                         <div class="step-content">
-                            <p>Edite o favorito do Khan Academy, mude o nome para "Script Khan" e na URL cole o código que copiou</p>
+                            <p>Vá até a guia que favoritou e clique nos 3 pontinhos e editar</p>
                             <div class="image-gallery">
                                 <div class="image-item">
-                                    <img src="imagens/khan7.png" alt="Editor de favoritos com código" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <img src="imagens/png/5.png" alt="Editor de favoritos" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <div class="placeholder-image" style="display:none">
+                                        <i class="fas fa-image fa-2x"></i>
+                                        <span>Editor de favoritos</span>
+                                    </div>
+                                    <div class="image-caption">Editor de favoritos</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 6 -->
+                    <div class="step">
+                        <span class="step-number">6</span>
+                        <div class="step-content">
+                            <p>Edite o nome para "Script Khan" e cole o código na URL</p>
+                            <div class="image-gallery">
+                                <div class="image-item">
+                                    <img src="imagens/png/6.png" alt="Editor de favoritos com código" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                     <div class="placeholder-image" style="display:none">
                                         <i class="fas fa-image fa-2x"></i>
                                         <span>Editor de favoritos com código</span>
@@ -1426,32 +1266,32 @@ javascript:fetch("https://raw.githubusercontent.com/Niximkk/Khanware/refs/heads/
                         </div>
                     </div>
                     
-                    <!-- Step 8 -->
+                    <!-- Step 7 -->
                     <div class="step">
-                        <span class="step-number">8</span>
+                        <span class="step-number">7</span>
                         <div class="step-content">
-                            <p>Volte ao site do Khan Academy e vá na barra de endereços</p>
+                            <p>Volte ao site do Khan e vá na barra de pesquisa</p>
                             <div class="image-gallery">
                                 <div class="image-item">
-                                    <img src="imagens/khan8.png" alt="Barra de endereços" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <img src="imagens/png/7.png" alt="Barra de pesquisa" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                     <div class="placeholder-image" style="display:none">
                                         <i class="fas fa-image fa-2x"></i>
-                                        <span>Barra de endereços</span>
+                                        <span>Barra de pesquisa</span>
                                     </div>
-                                    <div class="image-caption">Barra de endereços</div>
+                                    <div class="image-caption">Barra de pesquisa</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Step 9 -->
+                    <!-- Step 8 -->
                     <div class="step">
-                        <span class="step-number">9</span>
+                        <span class="step-number">8</span>
                         <div class="step-content">
-                            <p>Digite "Script Khan" e selecione a opção que aparece</p>
+                            <p>Digite "Script Khan"</p>
                             <div class="image-gallery">
                                 <div class="image-item">
-                                    <img src="imagens/khan9.png" alt="Pesquisa por Script Khan" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <img src="imagens/png/8.png" alt="Pesquisa por Script Khan" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                     <div class="placeholder-image" style="display:none">
                                         <i class="fas fa-image fa-2x"></i>
                                         <span>Pesquisa por Script Khan</span>
@@ -1462,14 +1302,14 @@ javascript:fetch("https://raw.githubusercontent.com/Niximkk/Khanware/refs/heads/
                         </div>
                     </div>
                     
-                    <!-- Step 10 -->
+                    <!-- Step 9 -->
                     <div class="step">
-                        <span class="step-number">10</span>
+                        <span class="step-number">9</span>
                         <div class="step-content">
-                            <p>Clique na opção que tem uma estrela do lado (seu favorito editado)</p>
+                            <p>Clique no que tem uma estrela do lado</p>
                             <div class="image-gallery">
                                 <div class="image-item">
-                                    <img src="imagens/khan10.png" alt="Resultado da pesquisa" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                                    <img src="imagens/png/9.png" alt="Resultado da pesquisa" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                                     <div class="placeholder-image" style="display:none">
                                         <i class="fas fa-image fa-2x"></i>
                                         <span>Resultado da pesquisa</span>
@@ -1480,20 +1320,14 @@ javascript:fetch("https://raw.githubusercontent.com/Niximkk/Khanware/refs/heads/
                         </div>
                     </div>
                     
-                    <!-- Step 11 -->
+                    <!-- Step 10 -->
                     <div class="step">
-                        <span class="step-number">11</span>
+                        <span class="step-number">10</span>
                         <div class="step-content">
-                            <p>O script será executado e você poderá aproveitar os recursos automatizados!</p>
-                            <div class="image-gallery">
-                                <div class="image-item">
-                                    <img src="imagens/khan11.png" alt="Script em execução" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                                    <div class="placeholder-image" style="display:none">
-                                        <i class="fas fa-image fa-2x"></i>
-                                        <span>Script em execução</span>
-                                    </div>
-                                    <div class="image-caption">Script em execução</div>
-                                </div>
+                            <p>Seja feliz ;D</p>
+                            <div class="info-box">
+                                <h4>Parabéns!</h4>
+                                <p>Você configurou com sucesso o script do Khan Academy. Agora você pode aproveitar os recursos automatizados para otimizar sua experiência de aprendizado.</p>
                             </div>
                         </div>
                     </div>
@@ -1680,27 +1514,6 @@ javascript:fetch("https://raw.githubusercontent.com/Niximkk/Khanware/refs/heads/
                     
                     // Deselect the text
                     window.getSelection().removeAllRanges();
-                });
-            }
-
-            // Progress bar functionality
-            const progressBar = document.getElementById('progressBar');
-            const steps = document.querySelectorAll('.step');
-            
-            if (progressBar && steps.length > 0) {
-                window.addEventListener('scroll', function() {
-                    const guideSection = document.querySelector('.guide-section');
-                    const guideTop = guideSection.offsetTop;
-                    const guideHeight = guideSection.offsetHeight;
-                    const windowHeight = window.innerHeight;
-                    
-                    const scrollPosition = window.scrollY;
-                    const guideBottom = guideTop + guideHeight;
-                    
-                    if (scrollPosition >= guideTop && scrollPosition <= guideBottom) {
-                        const progress = ((scrollPosition - guideTop) / (guideHeight - windowHeight)) * 100;
-                        progressBar.style.width = Math.min(Math.max(progress, 0), 100) + '%';
-                    }
                 });
             }
 
